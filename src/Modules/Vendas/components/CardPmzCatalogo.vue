@@ -1,10 +1,10 @@
 <template>
-    <div class="max-w-md transition-transform duration-500 ease-in-out hover:scale-110">
-        <div class="mt-10 max-w-md shadow-xl mx-4 bg-white">
+    <div class="max-w-md transition-transform duration-500 ease-in-out hover:scale-110 ">
+        <div class="mt-10 max-w-md shadow-xl mx-4 ">
             <div class="cursor-pointer flex justify-center">
                 <img
                         class="object-contain w-48 h-48"
-                        :src="item.image"
+                        :src="item.image || 'https://images.canaldapeca.com.br/produtos/m/59/39/valvula-termostatica-serie-ouro-1663959-1533761098362.jpg'"
                 />
             </div>
             <div class="p-3 text-sm">
@@ -34,17 +34,17 @@
                 <div class="flex justify-end items-center mx-15">
                     <div class="bg-purple-900 rounded-full h-6 w-6 transform rotate-45 text-center">
                         <a href class>
-                            <v-icon small color="#ffffff">{{icons.mdiLink}}</v-icon>
+                            <v-icon small color="#ffffff">mdi-link</v-icon>
                         </a>
                     </div>
                     <a href class="px-2">
-                        <v-icon>{{icons.mdiSwapHorizontalCircle}}</v-icon>
+                        <v-icon>mdi-swap-horizontal-circle</v-icon>
                     </a>
                     <a href class="px-2">
-                        <v-icon color="#9CCB51">{{icons.mdiPlusCircle}}</v-icon>
+                        <v-icon color="#9CCB51">mdi-plus-circle</v-icon>
                     </a>
                     <a href class="px-2">
-                        <v-icon light>{{icons.mdiDotsVertical}}</v-icon>
+                        <v-icon light>mdi-dots-vertical</v-icon>
                     </a>
                 </div>
             </div>
@@ -53,25 +53,15 @@
 </template>
 
 <script>
-  import {
-    mdiPlusCircle,
-    mdiSwapHorizontalCircle,
-    mdiLink,
-    mdiDotsVertical
-  } from "@mdi/js";
+
   export default {
     name: "CardPmzCatalogo",
     props:{
      item: Object,
     },
-    icons: {
-      mdiPlusCircle,
-      mdiSwapHorizontalCircle,
-      mdiLink,
-      mdiDotsVertical
-    },
+
     mounted() {
-      console.log(this.items);
+      console.log(this.item);
     }
   }
 </script>
