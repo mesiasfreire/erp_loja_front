@@ -6,8 +6,8 @@
                            <img class="md:w-256" src="../assets/logo-pmz.svg" alt="">
                        </div>
                        <div class="md:mt-6">
-                           <h3 class="font-normal text-center tracking-wide text-3xl">Bem vindo a Filial </h3>
-                           <h6 class="text-center text-sm">Usuário ou codigo do vendendor</h6>
+                           <h3 class="font-normal text-center tracking-wide text-3xl">Bem vindo a Filial - {{ filial.filial }} </h3>
+                           <h6 class="text-center text-sm">Usuário ou codigo do vendedor</h6>
                        </div>
                        <div class="mx-20">
                            <v-form class="mt-4">
@@ -37,9 +37,27 @@
 </template>
 
 <script>
+    import {FilialQueries} from "../graphql"
   export default {
     props: {
       source: String,
     },
+    data(){
+      return {
+        filial:null
+      }
+    },
+    computed:{
+
+    },
+    apollo:{
+      getFilialDetails: {
+        query:FilialQueries.getFilialDetails,
+        result(res){
+          this.filial=res.data.useFilial;
+        }
+      }
+    }
+
   }
 </script>

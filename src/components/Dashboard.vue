@@ -10,14 +10,12 @@
             </div>
             <PmzLogoBg />
             <v-row dense>
-                <v-col  cols="12"  md="2">
+                <v-col  cols="12" sm="4" md="2" >
                   <Modulos :modulo="infomacoes"  color="#0B304B" class="" />
                 </v-col>
-                <v-col  cols="12"  md="12" sm="12">
-                  <CardPmzCatalogo :item="item"/>
+                <v-col  cols="12"  sm="4" md="2">
+                    <Modulos :modulo="infomacoes"  color="#0B304B" class="" />
                 </v-col>
-
-
 
             </v-row>
 
@@ -30,10 +28,9 @@
     import Header from './Header'
     import Modulos from './Modulos'
     import PmzLogoBg from './PmzLogoBg'
-    import CardPmzCatalogo from '../Modules/Vendas/components/CardPmzCatalogo';
   export default {
     name: "Dashboard",
-    components:{ Header, Modulos,PmzLogoBg,CardPmzCatalogo },
+    components:{ Header, Modulos,PmzLogoBg },
     data: ()=> ({
       infomacoes: {
         key:'value'
