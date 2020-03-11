@@ -16,7 +16,9 @@
                 <v-col  cols="12"  sm="4" md="2">
                     <Modulos :modulo="infomacoes"  color="#0B304B" class="" />
                 </v-col>
-
+                <v-col  cols="12"  sm="4" md="2">
+                    <Modulos :modulo="infomacoes"  color="#0B304B" class="" />
+                </v-col>
             </v-row>
 
         </v-container>
